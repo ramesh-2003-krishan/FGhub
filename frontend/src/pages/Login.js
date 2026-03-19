@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Login({ setIsLoggedIn }) {
+function Login({ setIsLoggedIn, setIsSignup }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,16 +9,16 @@ function Login({ setIsLoggedIn }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/api/login", {
+      const res = await axios.post("http://localhost:8080/api/login", {
         username,
         password,
       });
 
-      if (response.data) {
+      if (res.data) {
         alert("Login successful ✅");
-        setIsLoggedIn(true);   // 🔥 THIS IS IMPORTANT
+        setIsLoggedIn(true);
       } else {
-        alert("Invalid credentials ❌");
+        alert("Invalid username or password ❌");
       }
 
     } catch (error) {
@@ -34,20 +34,27 @@ function Login({ setIsLoggedIn }) {
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Enter username"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
 
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
         <button type="submit">Login</button>
       </form>
+
+      <p>
+        Don’t have an account?{" "}
+        <button onClick={() => setIsSignup(true)}>Signup</button>
+      </p>
     </div>
   );
 }
