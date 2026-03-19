@@ -1,4 +1,4 @@
-package com.FGhub.controller;
+package com.FGhub.FGhub_backend.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,8 +13,7 @@ import com.FGhub.repository.MediaRepository;
 
 @RestController
 @RequestMapping("/api/media")
-@CrossOrigin
-
+@CrossOrigin(origins = "http://localhost:3000")
 public class MediaController {
 
     private final MediaRepository repository;
