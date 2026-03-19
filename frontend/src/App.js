@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Signup from "./pages/signup";
+import Signup from "./pages/Signup";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
 
-  // If logged in → show Home
+  
   if (isLoggedIn) {
     return <Home />;
   }
 
-  // Otherwise show Login or Signup
+  
   return (
     <div>
       {isSignup ? (
