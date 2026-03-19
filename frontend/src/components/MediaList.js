@@ -18,7 +18,9 @@ function MediaList() {
       <h3>All Media</h3>
       <ul>
         {media.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            <strong>{item.title}</strong> - {item.description} ({item.date})
+          </li>
         ))}
       </ul>
     </div>
