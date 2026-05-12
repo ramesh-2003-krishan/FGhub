@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/Signup.css";
 
 function Signup({ setIsSignup }) {
   const [username, setUsername] = useState("");
@@ -11,7 +10,7 @@ function Signup({ setIsSignup }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:9090/api/signup", {
+      const res = await axios.post("http://localhost:8080/api/signup", {
         username,
         password,
         email,
@@ -19,7 +18,7 @@ function Signup({ setIsSignup }) {
 
       alert("Signup successful ✅");
 
-      
+      // Go back to login
       setIsSignup(false);
 
     } catch (error) {
@@ -29,24 +28,8 @@ function Signup({ setIsSignup }) {
   };
 
   return (
-  <div className="signup-container">
-
-    <div className="bg bg1"></div>
-    <div className="bg bg2"></div>
-
-    <div className="navbar">
-      <div className="logo">FGhub</div>
-
-      <div className="nav-links">
-        <span>STORE</span>
-        <span>SUPPORT</span>
-      </div>
-    </div>
-
-    
-    <div className="login-card">
-      <h2 className="title">Create Account</h2>
-      <p className="subtitle">Join FGhub and access the vault</p>
+    <div>
+      <h2>Signup</h2>
 
       <form onSubmit={handleSignup}>
         <input
@@ -54,7 +37,6 @@ function Signup({ setIsSignup }) {
           placeholder="Enter username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="input-field"
           required
         />
 
@@ -63,7 +45,6 @@ function Signup({ setIsSignup }) {
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="input-field"
           required
         />
 
@@ -72,23 +53,18 @@ function Signup({ setIsSignup }) {
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="input-field"
           required
         />
 
-        <button type="submit" className="login-btn">
-          SIGN UP →
-        </button>
+        <button type="submit">Signup</button>
       </form>
 
-      <p className="signup-text">
+      <p>
         Already have an account?{" "}
-        <span onClick={() => setIsSignup(false)}>LOGIN</span>
+        <button onClick={() => setIsSignup(false)}>Login</button>
       </p>
     </div>
-
-  </div>
-);
+  );
 }
 
 export default Signup;

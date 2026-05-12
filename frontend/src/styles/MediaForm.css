@@ -1,0 +1,187 @@
+
+.media-form-advanced {
+  background: rgba(15, 15, 20, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 90vw;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(0, 255, 200, 0.15);
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-form-advanced::before {
+  content: "";
+  position: absolute;
+  top: -50%; right: -50%;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(0,255,200,0.4) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.media-form-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.media-form-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #00ffc8;
+  letter-spacing: 1px;
+}
+
+.media-form-header p {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.row-group {
+  display: flex;
+  gap: 20px;
+}
+
+.half {
+  flex: 1;
+}
+
+
+.media-input-adv {
+  width: 100%;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.media-input-adv::placeholder {
+  color: #555;
+}
+
+.media-input-adv:focus {
+  border-color: #00ffc8;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  background: rgba(0, 255, 200, 0.05);
+}
+
+.media-select-adv {
+  cursor: pointer;
+  appearance: auto; /* Let the OS handle the arrow */
+}
+
+/* Ensure options have a dark background so white text isn't invisible */
+.media-select-adv option {
+  background-color: #1a1a24;
+  color: #fff;
+}
+
+
+.upload-zones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.upload-box {
+  flex: 1;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 80px;
+}
+
+.upload-label:hover {
+  border-color: #00ffc8;
+  background: rgba(0, 255, 200, 0.05);
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.upload-text {
+  font-size: 12px;
+  color: #bbb;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+
+.media-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #00ffc8, #007cf0);
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.media-submit-btn:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  transition: transform 0.3s;
+}
+
+.media-submit-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}

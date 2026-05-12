@@ -2,27 +2,35 @@ import React, { useState } from "react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Store from "./pages/store";
+import Media from "./pages/Media";
+import LoginSelection from "./pages/LoginSelection";
+import AdminLogin from "./pages/AdminLogin";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSignup, setIsSignup] = useState(false);
-
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [authView, setAuthView] = useState("selection"); 
   
+  const [page, setPage] = useState("Home");  
+
   if (isLoggedIn) {
-    return <Home />;
+    if (isAdmin && page === "Admin") return <AdminPanel setPage={setPage} setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} />;
+
+    if (page === "Home") return <Home setPage={setPage} isAdmin={isAdmin} />;
+    if (page === "store") return <Store setPage={setPage}/>;
+    if (page === "Media") return <Media setPage={setPage} isAdmin={isAdmin} />;
+
+    return <Home setPage={setPage} isAdmin={isAdmin} />;
   }
 
-  
   return (
     <div>
-      {isSignup ? (
-        <Signup setIsSignup={setIsSignup} />
-      ) : (
-        <Login
-          setIsLoggedIn={setIsLoggedIn}
-          setIsSignup={setIsSignup}
-        />
-      )}
+      {authView === "selection" && <LoginSelection setAuthView={setAuthView} />}
+      {authView === "user_login" && <Login setIsLoggedIn={setIsLoggedIn} setAuthView={setAuthView} setIsSignup={(val) => setAuthView(val ? "signup" : "user_login")} />}
+      {authView === "admin_login" && <AdminLogin setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} setAuthView={setAuthView} setPage={setPage} />}
+      {authView === "signup" && <Signup setIsSignup={(val) => setAuthView(val ? "signup" : "user_login")} />}
     </div>
   );
 }

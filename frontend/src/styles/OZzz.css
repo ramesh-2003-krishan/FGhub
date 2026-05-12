@@ -1,0 +1,247 @@
+.ozzz-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  background: rgba(10, 10, 15, 0.95);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 200, 0.2);
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: sticky;
+  top: 20px;
+  margin-top: 80px;
+}
+
+.ozzz-header {
+  padding: 15px 20px;
+  background: linear-gradient(90deg, rgba(0, 255, 200, 0.1), transparent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.ozzz-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffc8, #007cf0);
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.ozzz-avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #111;
+  border: 1px solid rgba(0, 255, 200, 0.25);
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.35);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 200, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 255, 200, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 200, 0); }
+}
+
+.ozzz-title h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #00ffc8;
+}
+
+.ozzz-title span {
+  font-size: 12px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ffc8;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ozzz-chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ozzz-chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.ozzz-chat-box::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 200, 0.2);
+  border-radius: 3px;
+}
+
+.ozzz-msg-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.ozzz-mini-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #00ffc8;
+  box-shadow: 0 0 5px #00ffc8;
+  flex-shrink: 0;
+}
+
+.ozzz-mini-avatar-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #111;
+  border: 1px solid rgba(0, 255, 200, 0.25);
+  box-shadow: 0 0 8px rgba(0, 255, 200, 0.25);
+  flex-shrink: 0;
+}
+
+.ozzz-bubble {
+  max-width: 85%;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.oz-bubble {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 200, 0.2);
+  border-radius: 15px 15px 15px 0;
+  color: #ddd;
+}
+
+.user-bubble {
+  background: linear-gradient(135deg, #007cf0, #00ffc8);
+  color: #000;
+  font-weight: 500;
+  border-radius: 15px 15px 0 15px;
+}
+
+.ozzz-bubble p {
+  margin: 0;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #00ffc8;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+.ozzz-media-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.ozzz-media-card {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.ozzz-media-card:hover {
+  background: rgba(0, 255, 200, 0.1);
+  transform: translateX(5px);
+}
+
+.ozzz-media-card img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  background: #111;
+}
+
+.ozzz-media-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ozzz-media-info span {
+  font-size: 13px;
+  color: #00ffc8;
+  font-weight: bold;
+}
+
+.ozzz-media-info small {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.ozzz-input-area {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ozzz-input-area input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.ozzz-input-area input:focus {
+  border-color: #00ffc8;
+  background: rgba(0, 255, 200, 0.05);
+}
+
+.ozzz-input-area button {
+  background: #00ffc8;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ozzz-input-area button:hover {
+  background: #007cf0;
+  color: #fff;
+}

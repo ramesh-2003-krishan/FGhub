@@ -1,0 +1,170 @@
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BACKGROUND */
+.signup-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(0,0,0,0.5) 50%, transparent 52%),
+    url("../assets/AC.png") left center / 50.1% 100% no-repeat,
+    url("../assets/Witcher.webp") right center / 50.1% 100% no-repeat;
+
+  background-size: cover, cover, cover;
+  background-position: center, top left, bottom right;  
+
+  overflow: hidden;
+}
+
+
+.signup-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 200px;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* NAVBAR */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+
+  z-index: 2;
+}
+
+/* LOGO */
+.logo {
+  color: #00ffc8;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+/* NAV LINKS */
+.nav-links span {
+  color: #aaa;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links span:hover {
+  color: #00ffc8;
+}
+
+/* CARD */
+.login-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  width: 350px;
+
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.2);
+  border: 1px solid rgba(0, 255, 200, 0.2);
+
+  z-index: 1;
+}
+
+/* TITLE */
+.title {
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+.subtitle {
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field:focus {
+  border-color: #00ffc8;
+  box-shadow: 0 0 10px #00ffc8;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(90deg, #00ffc8, #007cf0);
+  border: none;
+  border-radius: 8px;
+
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  opacity: 0.8;
+}
+
+/* TEXT */
+.signup-text {
+  margin-top: 20px;
+  color: #aaa;
+  text-align: center;
+}
+
+.signup-text span {
+  color: #00ffc8;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signup-text span:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,285 @@
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #070a0f;
+}
+
+.media-container {
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  background:
+    linear-gradient(165deg, rgba(7, 10, 15, 0.97) 0%, rgba(15, 23, 42, 0.93) 50%, rgba(7, 10, 15, 0.97) 100%),
+    url("../assets/Avengers.jpg") 105% 20% / min(380px, 40vw) auto no-repeat,
+    url("../assets/COD.jpeg") -5% 70% / min(340px, 36vw) auto no-repeat,
+    url("../assets/AC.png"),
+    url("../assets/Witcher.webp"),
+    url("../assets/GOT.jpeg");
+  background-blend-mode: normal, soft-light, soft-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.5s ease-in-out;
+}
+
+.media-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.media-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 75% at 50% 0%,
+    transparent 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+
+  padding: 15px 30px; 
+
+  box-sizing: border-box; 
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.5px);
+
+  z-index: 2;
+}
+
+
+.logo {
+  color: #00ffc8;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+.nav-links span {
+  color: #aaa;
+  margin-left: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links span:hover {
+  color: #00ffc8;
+}
+
+.navbar-inner {
+  max-width: 1100px;   
+  margin: 0 auto;     
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+.catogory-switch {
+  z-index: 2;
+  display: flex;
+  justify-content: top;
+  align-items: top;
+  gap: 10px;
+  margin: 40px auto 20px auto;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05); 
+  border-radius: 50px; 
+  width: fit-content;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: 40px;
+
+}
+
+.catogory-switch button {
+  background: transparent;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.catogory-switch button:hover:not(.active) {
+  color: #ccc;
+}
+
+.catogory-switch button.active {
+  color: #000;
+  background-color: #00ffc8;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
+}
+
+.catogory-switch button:active {
+  transform: scale(0.95);
+}
+
+.list {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.media-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.media-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 200, 0.2);
+  border-color: #00ffc8;
+}
+
+.rating-container-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rating-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+  color: #ccc;
+}
+
+.search-bar:focus {
+  border-color: #00ffc8;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+  margin-top: 5px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 10px 15px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.search-result-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-result-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.search-result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #00ffc8;
+}
+
+.search-result-cat {
+  font-size: 11px;
+  color: #aaa;
+}
