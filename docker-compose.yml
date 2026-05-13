@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend/backend/FGhub-backend
+    container_name: fghub-backend
+    ports:
+      - "9090:9090"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/fghub
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: fghub-frontend
+    ports:
+      - "90:90"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
