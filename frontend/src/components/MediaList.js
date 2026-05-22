@@ -10,7 +10,7 @@ function MediaList({ category, onMediaClick, refreshKey, searchQuery }) {
 
   const fetchMedia = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/media");
+      const response = await axios.get("http://localhost:9090/api/media");
       setMedia(response.data);
     } catch (error) {
       console.error("Error fetching media:", error);

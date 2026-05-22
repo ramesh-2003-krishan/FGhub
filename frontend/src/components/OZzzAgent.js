@@ -30,7 +30,7 @@ function OZzzAgent({ setPage, agentImg }) {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/ai/recommend", {
+      const response = await axios.post("http://localhost:9090/api/ai/recommend", {
         message: userMessage.text,
       });
 

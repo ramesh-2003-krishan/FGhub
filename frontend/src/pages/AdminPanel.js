@@ -20,7 +20,7 @@ function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage }) {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/media");
+        const response = await axios.get("http://localhost:9090/api/media");
         setMediaItems(response.data);
       } catch (err) {
         console.error("Failed to fetch media:", err);
@@ -38,7 +38,7 @@ function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage }) {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this media?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/media/${id}`);
+        await axios.delete(`http://localhost:9090/api/media/${id}`);
         setRefreshKey(prev => prev + 1);
         alert("Deleted successfully ✅");
       } catch (err) {
@@ -73,7 +73,7 @@ function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage }) {
         formData.append("image", imageFile);
       }
 
-      await axios.post(`http://localhost:8080/api/media/edit/${editingItem.id}`, formData);
+      await axios.post(`http://localhost:9090/api/media/edit/${editingItem.id}`, formData);
       setRefreshKey(prev => prev + 1);
       setIsEditModalOpen(false);
       alert("Media updated successfully ✅");

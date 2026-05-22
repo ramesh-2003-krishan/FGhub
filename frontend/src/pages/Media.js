@@ -17,7 +17,7 @@ function Media({ setPage, isAdmin }) {
      useEffect(() => {
         const fetchMedia = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/media");
+                const response = await axios.get("http://localhost:9090/api/media");
                 setMediaList(response.data);
 
                 const targetId = localStorage.getItem("searchTargetId");

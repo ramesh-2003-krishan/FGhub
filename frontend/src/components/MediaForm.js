@@ -22,7 +22,7 @@ function MediaForm() {
     if (file) formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:8080/api/media", formData);
+      await axios.post("http://localhost:9090/api/media", formData);
       alert("Media successfully added to the vault! 🌌");
       // Reset form
       setTitle(""); setDescription(""); setDate(""); setCategory(""); setImage(null); setFile(null);

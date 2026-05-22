@@ -7,7 +7,7 @@ function RateMedia({ media, currentRating, onRateSuccess }) {
     const handleRate = async (newRating) => {
         setRating(newRating);
         try {
-            const response = await axios.put(`http://localhost:8080/api/media/${media.id}/rating?rating=${newRating}`);
+            const response = await axios.put(`http://localhost:9090/api/media/${media.id}/rating?rating=${newRating}`);
             alert("Thanks for rating!");
             if (onRateSuccess) onRateSuccess(response.data);
         } catch (err){
