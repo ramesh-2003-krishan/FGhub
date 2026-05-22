@@ -1,0 +1,6 @@
+com\FGhub\media\model\Media.class
+com\FGhub\media\repository\MediaRepository.class
+com\FGhub\media\controller\MediaController.class
+com\FGhub\media\controller\HomeController.class
+com\FGhub\media\MediaApplication.class
+com\FGhub\media\security\SecurityConfig.class

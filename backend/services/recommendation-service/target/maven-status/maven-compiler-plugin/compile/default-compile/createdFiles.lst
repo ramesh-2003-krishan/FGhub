@@ -1,0 +1,5 @@
+com\FGhub\recommendation\controller\AiController.class
+com\FGhub\recommendation\security\SecurityConfig.class
+com\FGhub\recommendation\RecommendationApplication.class
+com\FGhub\recommendation\controller\AiController$1.class
+com\FGhub\recommendation\model\Media.class

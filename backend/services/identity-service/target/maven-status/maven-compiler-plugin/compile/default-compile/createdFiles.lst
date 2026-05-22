@@ -1,0 +1,5 @@
+com\FGhub\identity\repository\userRepository.class
+com\FGhub\identity\controller\UserController.class
+com\FGhub\identity\model\user.class
+com\FGhub\identity\IdentityApplication.class
+com\FGhub\identity\security\SecurityConfig.class
