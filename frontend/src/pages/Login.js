@@ -18,6 +18,7 @@ function Login({ setIsLoggedIn, setIsSignup, setAuthView }) {
       if (res.data) {
         alert("Login successful ✅");
         localStorage.setItem("username", username);
+        localStorage.setItem("email", res.data.email || "");
         setIsLoggedIn(true);
       } else {
         alert("Invalid username or password ❌");

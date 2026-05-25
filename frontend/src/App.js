@@ -7,6 +7,7 @@ import Media from "./pages/Media";
 import LoginSelection from "./pages/LoginSelection";
 import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./pages/AdminPanel";
+import Profile from "./pages/Profile";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,11 +17,12 @@ function App() {
   const [page, setPage] = useState("Home");  
 
   if (isLoggedIn) {
-    if (isAdmin && page === "Admin") return <AdminPanel setPage={setPage} setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} />;
+    if (isAdmin && page === "Admin") return <AdminPanel setPage={setPage} setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} setAuthView={setAuthView} />;
 
     if (page === "Home") return <Home setPage={setPage} isAdmin={isAdmin} />;
     if (page === "store") return <Store setPage={setPage}/>;
     if (page === "Media") return <Media setPage={setPage} isAdmin={isAdmin} />;
+    if (page === "Profile") return <Profile setPage={setPage} setIsLoggedIn={setIsLoggedIn} setIsAdmin={setIsAdmin} setAuthView={setAuthView} />;
 
     return <Home setPage={setPage} isAdmin={isAdmin} />;
   }

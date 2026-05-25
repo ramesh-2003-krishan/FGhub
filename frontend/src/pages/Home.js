@@ -97,6 +97,9 @@ function Home({ setPage, isAdmin }) {
             )}
             <span onClick={() => setPage("store")}>Store</span>
             <span onClick={() => setPage("Media")}>Media</span>
+            <div className="profile-avatar-btn" onClick={() => setPage("Profile")} title="My Profile">
+                {localStorage.getItem("username") ? localStorage.getItem("username").charAt(0).toUpperCase() : "👤"}
+            </div>
         </div>
       </div>
       

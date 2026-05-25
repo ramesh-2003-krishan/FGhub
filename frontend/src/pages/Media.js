@@ -90,8 +90,11 @@ function Media({ setPage, isAdmin }) {
                  {isAdmin && (
                     <span onClick={() => setPage("Admin")} style={{ color: "#ff0055", fontWeight: "bold" }}>Admin Dashboard</span>
                  )}
-                 <span onClick={() => setPage("Home")}>Home</span>
-                 <span onClick={() => setPage("store")}>Store</span>
+                  <span onClick={() => setPage("Home")}>Home</span>
+                  <span onClick={() => setPage("store")}>Store</span>
+                  <div className="profile-avatar-btn" onClick={() => setPage("Profile")} title="My Profile" style={{ display: "inline-flex" }}>
+                      {localStorage.getItem("username") ? localStorage.getItem("username").charAt(0).toUpperCase() : "👤"}
+                  </div>
              </div>
            </div>
 

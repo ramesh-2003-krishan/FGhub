@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/AdminPanel.css";
 
-function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage }) {
+function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage, setAuthView }) {
   const [mediaItems, setMediaItems] = useState([]);
   const [refreshKey, setRefreshKey] = useState(0);
   
@@ -30,9 +30,10 @@ function AdminPanel({ setIsLoggedIn, setIsAdmin, setPage }) {
   }, [refreshKey]);
 
   const handleLogout = () => {
+    localStorage.clear();
     setIsLoggedIn(false);
     setIsAdmin(false);
-   
+    if (setAuthView) setAuthView("selection");
   };
 
   const handleDelete = async (id) => {

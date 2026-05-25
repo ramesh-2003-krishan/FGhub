@@ -18,6 +18,12 @@ function MediaForm() {
     formData.append("description", description);
     formData.append("date", date);
     formData.append("category", category);
+    
+    const activeUser = localStorage.getItem("username");
+    if (activeUser) {
+      formData.append("uploadedBy", activeUser);
+    }
+    
     if (image) formData.append("image", image);
     if (file) formData.append("file", file);
 
