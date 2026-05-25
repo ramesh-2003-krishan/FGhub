@@ -35,11 +35,13 @@ public class MediaController {
             @RequestParam("description") String description,
             @RequestParam("date") String date,
             @RequestParam("category") String category,
+            @RequestParam(value = "uploadedBy", required = false) String uploadedBy,
             @RequestParam(value = "image", required = false) MultipartFile image,
             @RequestParam(value = "file", required = false) MultipartFile file) throws IOException {
 
         Media media = new Media(title, description, date);
         media.setCategory(category);
+        media.setUploadedBy(uploadedBy);
 
         if (image != null && !image.isEmpty()) {
             String base64Image = java.util.Base64.getEncoder().encodeToString(image.getBytes());

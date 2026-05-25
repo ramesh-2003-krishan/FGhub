@@ -15,6 +15,7 @@ public class Media {
     private String img;
     private int ratingCount = 0;
     private double averageRating = 0.0;
+    private String uploadedBy;
 
     public Media() {}
 
@@ -86,5 +87,13 @@ public class Media {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getUploadedBy() {
+        return uploadedBy;
+    }
+
+    public void setUploadedBy(String uploadedBy) {
+        this.uploadedBy = uploadedBy;
     }
 }
