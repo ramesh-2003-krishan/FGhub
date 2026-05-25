@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -8,6 +9,20 @@ import LoginSelection from "./pages/LoginSelection";
 import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./pages/AdminPanel";
 import Profile from "./pages/Profile";
+
+// Global Axios Request Interceptor to inject JWT Bearer Token
+axios.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

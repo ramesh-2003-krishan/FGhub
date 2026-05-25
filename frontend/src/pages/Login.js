@@ -15,9 +15,10 @@ function Login({ setIsLoggedIn, setIsSignup, setAuthView }) {
         password,
       });
 
-      if (res.data) {
+      if (res.data && res.data.token) {
         alert("Login successful ✅");
-        localStorage.setItem("username", username);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("username", res.data.username || username);
         localStorage.setItem("email", res.data.email || "");
         setIsLoggedIn(true);
       } else {
@@ -26,7 +27,11 @@ function Login({ setIsLoggedIn, setIsSignup, setAuthView }) {
 
     } catch (error) {
       console.error(error);
-      alert("Server error ❌");
+      if (error.response && error.response.status === 401) {
+        alert("Invalid username or password ❌");
+      } else {
+        alert("Server error ❌");
+      }
     }
   };
 
